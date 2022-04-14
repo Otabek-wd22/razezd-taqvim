@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razyezd namoz vaqtlari</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="sarlovha">
+            <div class="text_3 hh">
+                <div class="staric_text"></div>
+                <ul class="dinamic_text">
+                    <li><span>Намоз вақтлари</span></li>
+                    <li><span>Namoz vaqtlari</span></li>
+                </ul>
+            </div> 
+            <h1>Assalomu aleykum</h1>
+            <span id="txt2"></span>
+            <h2 id="week">week</h2>
+            <h2 id="this_day">data</h2>
+        </div>
+
+
+        <div class="soatlar">
+
+            <!-- Bomdod -->
+            <div class="soat">
+                <div class="text_3">
+                    <ul class="dinamic_text">
+                        <li><span>Бомдод</span></li>
+                        <li><span>Bomdod</span></li>
+                    </ul>
+                </div>
+                <h1>05<span>:</span>20</h1>
+            </div>
+
+
+            <!-- peshin -->
+            <div class="soat">
+                <div class="text_3 p">
+                    <ul class="dinamic_text">
+                        <li><span>Пешин</span></li>
+                        <li><span>Peshin</span></li>
+                    </ul>
+                </div>
+                <h1>13<span>:</span>00</h1>
+            </div>
+
+
+            <!-- asr -->
+            <div class="soat">
+                <div class="text_3">
+                    <ul class="dinamic_text">
+                        <li><span>Аср</span></li>
+                        <li><span>Asr</span></li>
+                    </ul>
+                </div>
+                <h1>17<span>:</span>30</h1>
+            </div>
+
+
+            <!-- shom -->
+            <div class="soat">
+                <div class="text_3">
+                    <ul class="dinamic_text">
+                        <li><span>Шом</span></li>
+                        <li><span>Shom</span></li>
+                    </ul>
+                </div>
+                <h1>19<span>:</span>15</h1>
+            </div>
+
+
+
+            <!-- xufton -->
+            <div class="soat">
+                <div class="text_3">
+                    <ul class="dinamic_text">
+                        <li><span>Хуфтон</span></li>
+                        <li><span>Xufton</span></li>
+                    </ul>
+                </div>
+                <h1>20<span>:</span>45</h1>
+            </div>
+        </div>
+
+
+        <div class="fotos">
+<div class="foto"><img src="./01.jpg" alt=""></div>
+<div class="foto"><img src="./02.jpg" alt=""></div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="foot">
+            <h3>Created By <span> DBITES </span> | Author: <span> Mr. Otabek_F </span> | All Rights Reserved! <span> 2022 </span></h3>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+
+        window.onload = function () { getTime(), getFullYear(); }
+        function getTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            // add a zero in front of numbers<10  
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt2').innerHTML = h + ":" + m + ":" + s;
+            setTimeout(function () { getTime() }, 1000);
+        }
+        //setInterval("getTime()",1000);//another way  
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+
+
+
+        function getFullYear() {
+            var v = new Date()// avtomatik vaqt uchun ishaydi hozirdi vaqtnbi korsatadi
+            // 26.11.2021
+            console.log("", v.getDate(), ".", v.getMonth() + 1, ".", v.getFullYear());
+
+
+var week= document.getElementById("week");
+            var sana = "";
+            var weeks ="";
+            switch (v.getDay()) {
+                case 0: weeks= "Yakshanba"; break;
+                case 1: weeks= "Dushanba"; break;
+                case 2: weeks= "Seshanba"; break;
+                case 3: weeks= "Chorshanba"; break;
+                case 4: weeks= "Payshanba"; break;
+                case 5: weeks= "Juma"; break;
+                case 6: weeks= "Shanba"; break;
+                    if (getDay() === 0) getDay().style.color = "red"
+            }
+            console.log(sana, v.getDay());
+week.innerHTML=weeks;
+            sana +=  " " + v.getDate() + " ";
+
+            switch (v.getMonth()) {
+
+                case 0: sana += "Yanvar"; break;
+                case 1: sana += "Febral"; break;
+                case 2: sana += "Mart"; break;
+                case 3: sana += "Aprel"; break;
+                case 4: sana += "May"; break;
+                case 5: sana += "Iyun "; break;
+                case 6: sana += "Iyul "; break;
+                case 7: sana += "Avgust "; break;
+                case 8: sana += "Sentyabr "; break;
+                case 9: sana += "Oktyabr "; break;
+                case 10: sana += "Noyabr "; break;
+                case 11: sana += "Dekabr "; break;
+            }
+
+            sana += " " + " " + v.getFullYear() + " yil";
+
+            this_day.style.color = "white";
+            this_day.innerHTML = sana;
+            console.log(sana);
+
+            // // documen.getElementById("this_day").innerHTML=sana += " " + v.getFullYear() + " - yil";
+
+            // // juma, 26-noyabr  2021-yil    2-yol
+            // console.log("\t\t\t yangi o'zgaruvchi bilan")
+
+            // var day = "", time = new Date();
+            // switch (v.getDay()) {
+            //     case 0: day += "Yakshanba"; break;
+            //     case 1: day += "Dushanba"; break;
+            //     case 2: day += "Seshanba"; break;
+            //     case 3: day += "Chorshanba"; break;
+            //     case 4: day += "Payshanba"; break;
+            //     case 5: day += "Juma"; break;
+            //     case 6: day += "Shanba"; break;
+            // }
+            // console.log(day, time.getDay());
+
+            // day += ", " + time.getDate() + " - ";
+
+            // switch (time.getMonth()) {
+
+            //     case 0: day += "Yanvar"; break;
+            //     case 1: day += "Febral"; break;
+            //     case 2: day += "Mart"; break;
+            //     case 3: day += "Aprel"; break;
+            //     case 4: day += "May"; break;
+            //     case 5: day += "Iyun "; break;
+            //     case 6: day += "Iyul "; break;
+            //     case 7: day += "Avgust "; break;
+            //     case 8: day += "Sentyabr "; break;
+            //     case 9: day += "Oktyabr "; break;
+            //     case 10: day += "Noyabr "; break;
+            //     case 11: day += "Dekabr "; break;
+            // }
+
+            // day += " " + time.getFullYear() + " - yil";
+
+            // console.log(day);
+            // this_day.innerHTML = day;
+
+
+
+
+            // reall vat tayorlash
+
+            // console.log("\t\t\t real vaqt yaratish");
+            // function tim() {
+
+            //     let v = new Date();
+
+            //     let t = v.getHours();
+            //     t = (v.getHours() < 10) ? ("0" + v.getHours()) : ("" + v.getHours());
+
+            //     let h = v.getMinutes();
+            //     h = (v.getMinutes() < 10) ? ("0" + v.getMinutes()) : ("" + v.getMinutes());
+
+            //     let s = v.getSeconds();
+            //     s = (s < 10) ? ("0" + s) : ("" + s);
+
+            //     console.log(t + ":" + h + ":" + s);
+            // }
+
+            // setInterval(tim, 1000);
+            // // oy uchun
+            // const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            // const d = new Date();
+            // const newmonth = months[d.getMonth()];
+
+            // console.log(newmonth);
+        }
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -19,7 +19,7 @@ body {
 }
 
 #week {
-    padding: 10px;
+    padding: 0px;
 }
 
 .container {
@@ -178,7 +178,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;gap: 10px;
 }
 
 

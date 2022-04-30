@@ -469,12 +469,12 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 200px;
+    width: 170px;
     padding: 20px;
-    margin: 10px;
-    border-radius: 20px 0;
-    -webkit-box-shadow: 0 0 20px inset white, 0 0 10px rgb(105, 105, 105);
-            box-shadow: 0 0 20px inset white, 0 0 10px rgb(105, 105, 105);
+    margin: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 0 20px  white, 0 5px 10px rgb(202, 197, 197);
+            box-shadow: 0 -5px 20px  white, 0 5px 10px rgb(247, 243, 2);
 }
 
 .soatlar {
